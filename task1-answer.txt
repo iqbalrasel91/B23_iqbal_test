@@ -1,0 +1,7 @@
+SELECT `category`.`Name` AS category_name,COUNT(`item_category_relations`.`ItemNumber`) AS total_items FROM `category`
+INNER JOIN `item_category_relations` ON (`category`.`Id` = `item_category_relations`.`categoryId` )
+INNER JOIN `item` ON (`item`.`Number`= `item_category_relations`.`ItemNumber`)
+GROUP BY category.`Id` ORDER BY COUNT(`item_category_relations`.`ItemNumber`) DESC
+
+
+
